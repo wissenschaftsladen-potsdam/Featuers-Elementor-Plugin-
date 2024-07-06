@@ -84,7 +84,7 @@ class Key_Features_Widget extends \Elementor\Widget_Base
         $settings = $this->get_settings_for_display();
 
         if (!empty($settings['features_list'])) {
-            echo '<div class="container">';
+            echo '<div class="key_features_container">';
             foreach ($settings['features_list'] as $index => $item) {
                 $direction = $index % 2 === 0 ? '' : 'row-reverse';
                 echo '<div class="feature" style="flex-direction: ' . $direction . ';">';
@@ -98,8 +98,5 @@ class Key_Features_Widget extends \Elementor\Widget_Base
             echo '</div>';
         }
 
-        // Hier würde der JavaScript-Code eingefügt, der für die dynamische Anpassung der Linien notwendig ist.
-        // Dieser Code kann direkt in die PHP-Datei eingefügt werden (z.B. innerhalb eines <script>-Tags) oder
-        // als separate JS-Datei, die dann eingebunden wird.
     }
 }

@@ -38,3 +38,15 @@ add_action('elementor/editor/after_enqueue_styles', function () {
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('keyfeatures-widget-styles', plugin_dir_url(__FILE__) . 'assets/css/keyfeatures-widget-styles.css');
 });
+
+// JavaScript für das Frontend einreihen
+add_action('wp_enqueue_scripts', function () {
+    // Stellen Sie sicher, dass der Pfad korrekt ist. Überprüfen Sie den Ordner und den Dateinamen.
+    wp_enqueue_script('keyfeatures-widget-script', plugin_dir_url(__FILE__) . 'assets/keyfeatures-widget.js', array ('jquery'), '1.0.0', true);
+});
+
+// Optional: JavaScript nur im Elementor-Editor einreihen
+add_action('elementor/editor/after_enqueue_scripts', function () {
+    // Stellen Sie sicher, dass der Pfad korrekt ist. Überprüfen Sie den Ordner und den Dateinamen.
+    wp_enqueue_script('keyfeatures-widget-editor-script', plugin_dir_url(__FILE__) . 'assets/keyfeatures-widget-editor.js', array ('jquery'), '1.0.0', true);
+});
