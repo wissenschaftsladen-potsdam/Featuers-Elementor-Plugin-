@@ -42,11 +42,11 @@ add_action('wp_enqueue_scripts', function () {
 // JavaScript für das Frontend einreihen
 add_action('wp_enqueue_scripts', function () {
     // Stellen Sie sicher, dass der Pfad korrekt ist. Überprüfen Sie den Ordner und den Dateinamen.
-    wp_enqueue_script('keyfeatures-widget-script', plugin_dir_url(__FILE__) . 'assets/keyfeatures-widget.js', array ('jquery'), '1.0.0', true);
+    wp_enqueue_script('keyfeatures-widget-script', plugin_dir_url(__FILE__) . 'assets/js/key-features-widget.js', array ('jquery'), '1.0.0', true);
 });
 
 // Optional: JavaScript nur im Elementor-Editor einreihen
 add_action('elementor/editor/after_enqueue_scripts', function () {
     // Stellen Sie sicher, dass der Pfad korrekt ist. Überprüfen Sie den Ordner und den Dateinamen.
-    wp_enqueue_script('keyfeatures-widget-editor-script', plugin_dir_url(__FILE__) . 'assets/keyfeatures-widget-editor.js', array ('jquery'), '1.0.0', true);
+    wp_enqueue_script('keyfeatures-widget-editor-script', plugin_dir_url(__FILE__) . 'assets/js/key-features-widget.js', array ('jquery'), '1.0.0', true);
 });

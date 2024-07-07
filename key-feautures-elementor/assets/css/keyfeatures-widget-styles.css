@@ -10,7 +10,7 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     max-width: 500px;
+     max-width: 100%;
      min-width: 340px;
      margin: auto;
      margin-top: 20px;
@@ -22,7 +22,19 @@
      align-items: center;
      margin-bottom: 20px;
      position: relative; /* Hinzugefügt für korrekte Positionierung des Canvas */
+	 width: 100%;
+	 justify-content: space-between;
  }
+.key_features_container .feature .text1{
+	text-align: left;
+	width: 100%;
+	margin-right: 20px;
+}
+.key_features_container .feature .text2{
+	text-align: right;
+	width: 100%;
+	margin-left: 20px;
+}
 
      .feature img {
          width: 100px;
@@ -33,15 +45,14 @@
          box-sizing: border-box;
      }
 
-     .feature div {
-         text-align: center;
-     }
 
- canvas {
-     position: absolute;
-     left: 0;
-     top: 0;
- }
+.feature-line-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /* Setzt die Breite des Canvas auf 100% der Breite des Elternelements */
+    z-index: -1; /* Stellt sicher, dass der Canvas hinter den Bögen liegt */
+}
 
  .feature:nth-child(2) {
      flex-direction: row-reverse; /* Stellt sicher, dass die Elemente horizontal angeordnet sind */

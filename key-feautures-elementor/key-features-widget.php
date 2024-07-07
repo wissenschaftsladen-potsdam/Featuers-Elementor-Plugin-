@@ -87,16 +87,18 @@ class Key_Features_Widget extends \Elementor\Widget_Base
             echo '<div class="key_features_container">';
             foreach ($settings['features_list'] as $index => $item) {
                 $direction = $index % 2 === 0 ? '' : 'row-reverse';
+                // Öffnen des Feature-Elements
                 echo '<div class="feature" style="flex-direction: ' . $direction . ';">';
+                // Einfügen des lineCanvas als erstes Kind des Feature-Elements
+                echo '<canvas id="lineCanvas' . esc_attr($index) . '" class="feature-line-canvas"></canvas>';
+                // Weiterer Inhalt des Feature-Elements
                 echo '<img src="' . esc_url($item['feature_image']['url']) . '" alt="' . esc_attr($item['feature_title']) . '" class="pic' . esc_attr($index + 1) . '">';
                 echo '<div class="tex' . esc_attr($index + 1) . '">';
                 echo '<h2>' . esc_html($item['feature_title']) . '</h2>';
                 echo '<p>' . esc_html($item['feature_description']) . '</p>';
-                echo '</div></div>';
+                echo '</div></div>'; // Schließen des Feature-Elements
             }
-            echo '<canvas id="lineCanvas"></canvas>';
-            echo '</div>';
+            echo '</div>'; // Schließen des key_features_container
         }
-
     }
 }
